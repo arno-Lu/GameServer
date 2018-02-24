@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package LU;
+
+message LoginMSG{
+
+    string username = 2;
+    string password = 3;
+
+}
+
+message LoginRSPS{
+
+    string message = 2;
+}
+
+message RegisterMSG{
+
+    string username = 2;
+    string password = 3;
+}
+
+message RegisterRSPS{
+
+    string message =2;
+}
+
+message ChatMSG{
+
+    int32 uin = 2;
+    string message = 3;
+
+}
+
+message ChatRSPS{
+
+    int32 uin = 2;
+    string message = 3;
+}
+
+message MatchMSG{
+
+    string role = 2;
+}
+
+message MatchRSPS{
+
+    int32 uin = 2;
+}
+
+message SCStartGame{
+
+    repeated int32 uins = 2;
+}
+
+
+message CSFrameNotify {
+    int32 uin = 2;
+    repeated int32 keys = 3;
+}
+
+message SCFrameNotify {
+    repeated CSFrameNotify keys = 2;
+    int32 currentFrame = 3;
+    int32 nextFrame = 4;
+}
+
+
